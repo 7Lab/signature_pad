@@ -1,3 +1,6 @@
+##What is this fork?
+This project was forked to create a compatible v2.1+ package to use with angular2-signaturepad.
+
 # Signature Pad [![npm](https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&type=6&v=2.1.1&x2=0)](https://www.npmjs.com/package/signature_pad) [![Code Climate](https://codeclimate.com/github/szimek/signature_pad.png)](https://codeclimate.com/github/szimek/signature_pad)
 
 
