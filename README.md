@@ -3,8 +3,48 @@ This is a simple fork of signature_pad 2.1.1 to be compatible with angular2-sign
 
 This includes a bug fix to export SVGs with the correct path colors.
 
+## Why was this forked?
+angular2-signaturepad is stuck using signature_pad 1.5.3 due to the way later versions export the class.  The current version of signature_pad as of today is 2.1.1 and includes the ability to export to SVG.  In order to get the two to play together, it was required to fork both projects.
 
+## Yay! How do I use this?
 
+Step 1 is to remove any installed versions of these packages:
+
+```
+npm uninstall --save angular2-signaturepad
+npm uninstall --save signature_pad
+```
+
+To avoid forking angular2-signaturepad just to remove a single dependency, it's easier to download this file and place it in your src/directives directory:
+
+```
+https://github.com/wulfsolter/angular2-signaturepad/blob/master/signature-pad.ts
+```
+
+Then update your app.module.ts and add this to the imports:
+
+```
+import { SignaturePad } from '../directives/signature-pad';
+```
+
+and add SignaturePad to your declarations:
+
+```
+declarations: [
+   SignaturePad
+]
+```
+
+Then install this module:
+```
+npm install --save https://github.com/DynamoEffects/signature_pad.git
+```
+
+In theory that should work.
+
+## Does this come with support and a money back guarantee?
+
+No and no, this was forked for a very specific project and is being shared to help others who might be waiting for an update for those two projects.
 
 
 
