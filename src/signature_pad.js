@@ -466,4 +466,4 @@ SignaturePad.prototype.toData = function () {
   return this._data;
 };
 
-export SignaturePad;
+export { SignaturePad };

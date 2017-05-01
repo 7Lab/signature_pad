@@ -17,10 +17,10 @@
  */
 
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-	typeof define === 'function' && define.amd ? define(factory) :
-	(global.SignaturePad = factory());
-}(this, (function () { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+	typeof define === 'function' && define.amd ? define(['exports'], factory) :
+	(factory((global.SignaturePad = global.SignaturePad || {})));
+}(this, (function (exports) { 'use strict';
 
 function Point(x, y, time) {
   this.x = x;
@@ -567,6 +567,8 @@ SignaturePad.prototype.toData = function () {
   return this._data;
 };
 
-return SignaturePad;
+exports.SignaturePad = SignaturePad;
+
+Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
