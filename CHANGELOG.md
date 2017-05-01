@@ -1,4 +1,8 @@
 ## Changelog
+### 2.1.1-alt
+*   Compatible with angular2-signaturepad and doesn't break AOT compilation
+*   Fixes SVG export colors
+
 ### 2.1.1
 *   Fixed a bug where default value was applied for throttle when throttle was set to 0. ([mkrause](https://github.com/mkrause) in [#247](https://github.com/szimek/signature_pad/pull/247))
 

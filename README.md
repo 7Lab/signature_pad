@@ -1,5 +1,12 @@
 ## What is this fork?
-This is a simple fork of signature_ad 2.1.1 to be compatible with angular2-signaturepad.  It's pre-compiled for simplicity as it's only a temporary fix until the authors of the original packages can come up with a solution.
+This is a simple fork of signature_pad 2.1.1 to be compatible with angular2-signaturepad.  It's pre-compiled for simplicity as it's only a temporary fix until the authors of the original packages can come up with a solution.
+
+This includes a bug fix to export SVGs with the correct path colors.
+
+
+
+
+
 
 # Signature Pad [![npm](https://d25lcipzij17d.cloudfront.net/badge.svg?id=js&type=6&v=2.1.1&x2=0)](https://www.npmjs.com/package/signature_pad) [![Code Climate](https://codeclimate.com/github/szimek/signature_pad.png)](https://codeclimate.com/github/szimek/signature_pad)
 
