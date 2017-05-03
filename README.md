@@ -13,31 +13,7 @@ Step 1 is to remove any installed versions of these packages:
 ```
 npm uninstall --save angular2-signaturepad
 npm uninstall --save signature_pad
-```
-
-To avoid forking angular2-signaturepad just to remove a single dependency, it's easier to download this file and place it in your src/directives directory:
-
-```
-https://github.com/wulfsolter/angular2-signaturepad/blob/master/signature-pad.ts
-```
-
-Then update your app.module.ts and add this to the imports:
-
-```
-import { SignaturePad } from '../directives/signature-pad';
-```
-
-and add SignaturePad to your declarations:
-
-```
-declarations: [
-   SignaturePad
-]
-```
-
-Then install this module:
-```
-npm install --save https://github.com/DynamoEffects/signature_pad.git
+npm install --save https://github.com/DynamoEffects/angular2-signaturepad.git
 ```
 
 In theory that should work.
