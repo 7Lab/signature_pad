@@ -280,7 +280,9 @@ var SignaturePad = (function (document) {
 	  var y = event.clientY;
 
 	  var point = this._createPoint(x, y);
-	  var { curve, widths } = this._addPoint(point);
+	  var data = this._addPoint(point),
+	  curve = data[0];
+	  widths = data[1];
 
 	  if (curve && widths) {
 		this._drawCurve(curve, widths.start, widths.end);
@@ -364,7 +366,7 @@ var SignaturePad = (function (document) {
 		// so that we always have no more than 4 points in points array.
 		points.shift();
 
-		return { curve, widths };
+		return [ curve, widths ];
 	  }
 
 	  return {};
@@ -488,7 +490,9 @@ var SignaturePad = (function (document) {
 			  this._addPoint(point);
 			} else if (j !== group.length - 1) {
 			  // Middle point in a group.
-			  var { curve, widths } = this._addPoint(point);
+			  var data = this._addPoint(point),
+			  curve = data[0];
+			  widths = data[1];
 			  if (curve && widths) {
 				drawCurve(curve, widths, color);
 			  }
@@ -529,10 +533,10 @@ var SignaturePad = (function (document) {
 			  !isNaN(curve.control1.y) &&
 			  !isNaN(curve.control2.x) &&
 			  !isNaN(curve.control2.y)) {
-			var attr = `M ${curve.startPoint.x.toFixed(3)},${curve.startPoint.y.toFixed(3)} `
-					   + `C ${curve.control1.x.toFixed(3)},${curve.control1.y.toFixed(3)} `
-					   + `${curve.control2.x.toFixed(3)},${curve.control2.y.toFixed(3)} `
-					   + `${curve.endPoint.x.toFixed(3)},${curve.endPoint.y.toFixed(3)}`;
+			var attr = 'M ${curve.startPoint.x.toFixed(3)},${curve.startPoint.y.toFixed(3)} '
+					   + 'C ${curve.control1.x.toFixed(3)},${curve.control1.y.toFixed(3)} '
+					   + '${curve.control2.x.toFixed(3)},${curve.control2.y.toFixed(3)} '
+					   + '${curve.endPoint.x.toFixed(3)},${curve.endPoint.y.toFixed(3)}';
 
 			path.setAttribute('d', attr);
 			path.setAttribute('stroke-width', (widths.end * 2.25).toFixed(3));
@@ -559,9 +563,9 @@ var SignaturePad = (function (document) {
 	  var header = '<svg'
 		+ ' xmlns="http://www.w3.org/2000/svg"'
 		+ ' xmlns:xlink="http://www.w3.org/1999/xlink"'
-		+ ` viewBox="${minX} ${minY} ${maxX} ${maxY}"`
-		+ ` width="${maxX}"`
-		+ ` height="${maxY}"`
+		+ ' viewBox="${minX} ${minY} ${maxX} ${maxY}"'
+		+ ' width="${maxX}"'
+		+ ' height="${maxY}"'
 		+ '>';
 	  var body = svg.innerHTML;
 
