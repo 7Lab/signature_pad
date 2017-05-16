@@ -281,7 +281,7 @@ var SignaturePad = (function (document) {
 
 	  var point = this._createPoint(x, y);
 	  var data = this._addPoint(point),
-	  curve = data[0];
+	  curve = data[0],
 	  widths = data[1];
 
 	  if (curve && widths) {
@@ -491,7 +491,7 @@ var SignaturePad = (function (document) {
 			} else if (j !== group.length - 1) {
 			  // Middle point in a group.
 			  var data = this._addPoint(point),
-			  curve = data[0];
+			  curve = data[0],
 			  widths = data[1];
 			  if (curve && widths) {
 				drawCurve(curve, widths, color);
